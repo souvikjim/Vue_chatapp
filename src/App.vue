@@ -1,17 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+    <button @click="openModal">Open Chat</button>
+
+    <ChatModal ref="chatModal" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ChatModal from "@/components/ChatModal.vue";
 
 export default {
-  name: 'App',
+  methods: {
+    openModal() {
+      this.$refs.chatModal.showModal = true;
+    },
+  },
   components: {
-    HelloWorld
-  }
-}
+    ChatModal,
+  },
+};
 </script>
 
 <style>
